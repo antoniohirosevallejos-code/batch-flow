@@ -1,20 +1,30 @@
-# Batch Flow Video — publicación
+# Batch Flow Video — paquete de publicación
 
-Archivos estáticos preparados para GitHub Pages. Clave fija de esta entrega: **PandaFlow-20-Video**.
+Esta carpeta contiene la versión web lista para subir a la raíz del repositorio de GitHub Pages.
 
-## Publicar desde el celular
-1. Descarga y descomprime el ZIP.
-2. Entra a https://github.com/antoniohirosevallejos-code/batch-flow y sube los cuatro archivos (`index.html`, `style.css`, `app.js`, `README.md`) a la raíz del repositorio.
-3. En Settings → Pages, selecciona la rama `main` y carpeta `/ (root)`. Guarda y espera la URL HTTPS.
-4. Prueba primero con un MP4 pequeño, con y sin audio, y revisa el video exportado antes de venderlo.
+## Archivos
+- `index.html`: página y estructura de la herramienta.
+- `style.css`: diseño adaptable a teléfonos y computadores.
+- `app.js`: acceso y procesamiento de video en el navegador.
+- `assets/hero-skate.webp`: imagen optimizada de la portada.
 
-## Payhip
-El enlace proporcionado, https://payhip.com/PandaNotas, es la tienda general, no necesariamente la página de compra de Batch Flow Video. Crea un producto independiente a USD 20 y utiliza su enlace individual para dirigir compradores a ese producto. No reutilices el enlace de Visualizer Flow por error.
+## Publicar desde el teléfono
+1. Abre el repositorio https://github.com/antoniohirosevallejos-code/batch-flow.
+2. Sube/reemplaza `index.html`, `style.css`, `app.js` y `README.md` en la raíz. Sube también la carpeta `assets` con `hero-skate.webp` dentro.
+3. En Settings → Pages, confirma que GitHub Pages publica la rama `main` desde la carpeta raíz.
+4. Espera a que termine el despliegue y abre la web. La clave de acceso es `PandaFlow-20-Video`.
 
-## Límites y honestidad
-- Hasta 3 videos por lote, secuenciales; duración máxima por archivo 210 segundos.
-- Exporta MP4 H.264/AAC a 30 fps con fondo desenfocado y el video completo centrado.
-- El motor FFmpeg.wasm y JSZip se cargan desde CDN, así que se necesita internet. Los videos se procesan en el navegador y no se envían a un servidor propio.
-- La clave fija es una barrera básica, no una protección segura: el JavaScript del sitio es público y alguien técnico puede extraerla o saltarse el control.
-- El límite de duración no garantiza compatibilidad universal. Resolución, códec, memoria y navegador pueden provocar fallos; ZIP puede consumir memoria extra.
-- Se comprobó la integridad del ZIP y la sintaxis JavaScript cuando Node está disponible. Eso no equivale a una prueba real de conversión en todos los teléfonos. Antes de vender, prueba con archivos reales en el dispositivo de destino.
+## Configuración de venta
+La tienda proporcionada https://payhip.com/PandaNotas es la página general de la tienda, no necesariamente el checkout de este producto. Crea un producto individual a USD 20 y configura la entrega de la clave y el enlace de la herramienta en Payhip. No reutilices el checkout de Visualizer Flow.
+
+## Comportamiento y límites
+- Hasta 3 videos de entrada por tanda; se procesan de forma secuencial.
+- Cada entrada puede durar hasta 3 min 30 s.
+- Modo predeterminado: genera vertical 9:16, cuadrado 1:1 y horizontal 16:9 por cada video. Modo alternativo: solo un formato elegido.
+- Exportación prevista a MP4 H.264/AAC, 30 fps, con el video principal completo y fondo desenfocado.
+- El procesamiento de los videos ocurre en el navegador; esta página no sube los archivos a un servidor propio. La carga inicial de componentes sí necesita conexión a internet.
+- La compatibilidad depende del navegador, el códec, la resolución y la memoria del dispositivo. No se garantiza conversión para todos los archivos o teléfonos; prueba con un video corto primero.
+- La clave fija es una barrera básica, no seguridad robusta: el código de una página estática puede inspeccionarse.
+
+## Verificación importante
+Se revisaron la estructura de archivos y la sintaxis JavaScript. No se pudo ejecutar una conversión real en este entorno sin acceso a internet/CDN; por tanto, la carga del motor y la conversión final deben probarse en la web publicada desde el teléfono antes de vender el acceso.
